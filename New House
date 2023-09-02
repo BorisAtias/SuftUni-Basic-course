@@ -1,0 +1,47 @@
+flower = str(input())
+flower_count = int(input())
+budget = int(input())
+
+Roses = 5
+Dahlias = 3.80
+Tulips = 2.80
+Narcissus = 3
+Gladiolus = 2.50
+
+bill_total = 0
+
+if flower == 'Roses':
+    if flower_count <= 80:
+        bill_total = flower_count * Roses
+    elif flower_count > 80:
+        bill_total = (flower_count * Roses) - (flower_count * Roses) * 0.10
+
+if flower == 'Dahlias':
+    if flower_count <= 90:
+        bill_total = flower_count * Dahlias
+    elif flower_count > 90:
+        bill_total = (flower_count * Dahlias) - (flower_count * Dahlias) * 0.15
+
+if flower == 'Tulips':
+    if flower_count <= 80:
+        bill_total = flower_count * Tulips
+    elif flower_count > 80:
+        bill_total = (flower_count * Tulips) - (flower_count * Tulips) * 0.15
+
+if flower == 'Narcissus':
+    if flower_count < 120:
+        bill_total = (flower_count * Narcissus) + (flower_count * Narcissus) * 0.15
+    elif flower_count >= 120:
+        bill_total = flower_count * Narcissus
+
+if flower == 'Gladiolus':
+    if flower_count < 80:
+        bill_total = (flower_count * Gladiolus) + (flower_count * Gladiolus) * 0.20
+    elif flower_count >= 80:
+        bill_total = flower_count * Gladiolus
+
+if budget >= bill_total:
+    print(f'Hey, you have a great garden with {flower_count} {flower} and {budget - bill_total:.2f} leva left.')
+
+elif budget < bill_total:
+    print(f'Not enough money, you need {abs(budget - bill_total):.2f} leva more.')
