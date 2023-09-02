@@ -1,0 +1,53 @@
+stay_period = int(input())
+accommodation = str(input())
+evaluation = str(input())
+
+single_room_price = (stay_period - 1) * 18
+suit_price = (stay_period - 1) * 25
+presid_suit_price = (stay_period - 1) * 35
+
+bill_total = 0
+
+if accommodation == 'room_for_one_person' and stay_period < 10 or 10<= stay_period <= 15 or stay_period > 15:
+    if evaluation == 'positive':
+        bill_total = single_room_price + (single_room_price * 0.25)
+    elif evaluation == 'negative':
+        bill_total = single_room_price - (single_room_price * 0.10)
+
+if accommodation == 'apartment' and stay_period < 10:
+    if evaluation == 'positive':
+        bill_total = (suit_price - (suit_price * 0.30)) + (suit_price - (suit_price * 0.30)) * 0.25
+    elif evaluation == 'negative':
+        bill_total = (suit_price - (suit_price * 0.30)) - (suit_price - (suit_price * 0.30)) * 0.10
+
+if accommodation == 'apartment' and 10 <= stay_period <= 15:
+    if evaluation == 'positive':
+        bill_total = (suit_price - (suit_price * 0.35)) + (suit_price - (suit_price * 0.35)) * 0.25
+    elif evaluation == 'negative':
+        bill_total = (suit_price - (suit_price * 0.35)) - (suit_price - (suit_price * 0.35)) * 0.10
+
+if accommodation == 'apartment' and stay_period > 15:
+    if evaluation == 'positive':
+        bill_total = (suit_price - (suit_price * 0.50)) + (suit_price - (suit_price * 0.50)) * 0.25
+    elif evaluation == 'negative':
+        bill_total = (suit_price - (suit_price * 0.50)) - (suit_price - (suit_price * 0.50)) * 0.10
+
+if accommodation == 'president apartment' and stay_period < 10:
+    if evaluation == 'positive':
+        bill_total = (presid_suit_price - (presid_suit_price * 0.10)) + (presid_suit_price - (presid_suit_price * 0.10)) * 0.25
+    elif evaluation == 'negative':
+        bill_total = (presid_suit_price - (presid_suit_price * 0.10)) - (presid_suit_price - (presid_suit_price * 0.10)) * 0.10
+
+if accommodation == 'president apartment' and 10 < stay_period <= 15:
+    if evaluation == 'positive':
+        bill_total = (presid_suit_price - (presid_suit_price * 0.15)) + (presid_suit_price - (presid_suit_price * 0.15)) * 0.25
+    elif evaluation == 'negative':
+        bill_total = (presid_suit_price - (presid_suit_price * 0.15)) - (presid_suit_price - (presid_suit_price * 0.15)) * 0.10
+
+if accommodation == 'president apartment' and stay_period > 15:
+    if evaluation == 'positive':
+        bill_total = (presid_suit_price - (presid_suit_price * 0.20)) + (presid_suit_price - (presid_suit_price * 0.20)) * 0.25
+    elif evaluation == 'negative':
+        bill_total = (presid_suit_price - (presid_suit_price * 0.20)) - (presid_suit_price - (presid_suit_price * 0.20)) * 0.10
+
+print(f'{bill_total:.2f}')
