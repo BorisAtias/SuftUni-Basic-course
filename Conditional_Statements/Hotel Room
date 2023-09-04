@@ -1,0 +1,41 @@
+month = str(input())
+lease_term = int(input())
+
+studio_cost = 0
+apartment_cost = 0
+
+if month == 'May' or month == 'October':
+    if 0 < lease_term <= 7:
+        studio_cost = 50 * lease_term
+        apartment_cost = 65 * lease_term
+    elif 7 < lease_term <= 14:
+        studio_cost = (50 * lease_term) - (50 * lease_term) * 0.05
+        apartment_cost = 65 * lease_term
+    elif lease_term > 14:
+        studio_cost = (50 * lease_term) - (50 * lease_term) * 0.30
+        apartment_cost = (65 * lease_term) - (65 * lease_term) * 0.10
+
+elif month == 'June' or month == 'September':
+    if 0 < lease_term <= 7:
+        studio_cost = 75.20 * lease_term
+        apartment_cost = 68.70 * lease_term
+    elif 7 < lease_term <= 14:
+        studio_cost = 75.20 * lease_term
+        apartment_cost = 68.70 * lease_term
+    elif lease_term > 14:
+        studio_cost = (75.20 * lease_term) - (75.20 * lease_term) * 0.20
+        apartment_cost = (68.70 * lease_term) - (68.70 * lease_term) * 0.10
+
+if month == 'July' or month == 'August':
+    if 0 < lease_term <= 7:
+        studio_cost = 76 * lease_term
+        apartment_cost = 77 * lease_term
+    elif 7 < lease_term <= 14:
+        studio_cost = 76 * lease_term
+        apartment_cost = 77 * lease_term
+    elif lease_term > 14:
+        studio_cost = 76 * lease_term
+        apartment_cost = (77 * lease_term) - (77 * lease_term) * 0.10
+
+print(f'Apartment: {apartment_cost:.2f} lv.')
+print(f'Studio: {studio_cost:.2f} lv.')

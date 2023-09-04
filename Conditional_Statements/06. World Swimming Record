@@ -1,0 +1,14 @@
+from math import floor
+
+word_record_seconds = float(input())
+distance = float(input())
+swimming_time_per_meter = float(input())
+
+water_resistence_delay = floor(distance / 15) * 12.5
+
+finish_time_seconds = swimming_time_per_meter * distance + water_resistence_delay
+
+if finish_time_seconds >= word_record_seconds:
+    print(f"No, he failed! He was {finish_time_seconds - word_record_seconds:.2f} seconds slower.")
+else:
+    print(f"Yes, he succeeded! The new world record is {finish_time_seconds:.2f} seconds.")

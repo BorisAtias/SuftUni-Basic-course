@@ -1,0 +1,39 @@
+budget = float(input())
+season = str(input())
+
+destination = ''
+accommodation = ''
+money_spent = 0
+
+if budget <= 100:
+    if season == 'summer':
+        destination = 'Bulgaria'
+        accommodation = 'Camp'
+        money_spent = budget * 0.30
+    elif season == 'winter':
+        destination = 'Bulgaria'
+        accommodation = 'Hotel'
+        money_spent = budget * 0.70
+
+if 100 < budget <= 1000:
+    if season == 'summer':
+        destination = 'Balkans'
+        accommodation = 'Camp'
+        money_spent = budget * 0.40
+    elif season == 'winter':
+        destination = 'Balkans'
+        accommodation = 'Hotel'
+        money_spent = budget * 0.80
+
+if budget > 1000:
+    if season == 'summer':
+        destination = 'Europe'
+        accommodation = 'Hotel'
+        money_spent = budget * 0.90
+    elif season == 'winter':
+        destination = 'Europe'
+        accommodation = 'Hotel'
+        money_spent = budget * 0.90
+
+print(f'Somewhere in {destination}')
+print(f'{accommodation} - {money_spent:.2f}')

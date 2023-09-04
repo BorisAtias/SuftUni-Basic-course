@@ -1,0 +1,10 @@
+first_time_sec = int(input())
+second_time_sec = int(input())
+third_time_sec = int(input())
+
+total_time_sec = first_time_sec + second_time_sec + third_time_sec
+
+minutes = total_time_sec // 60
+seconds = total_time_sec % 60
+
+print(f"{minutes}:{seconds:02d}")
